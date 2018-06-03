@@ -1,0 +1,65 @@
+<div *ngIf="lat && lng">
+	<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="onChoseLocation($event)" >
+
+		<agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="icon">
+			<agm-info-window *ngIf="authService.isLoggedIn()">
+				<h2>Hi, {{authService.displayName}}</h2>
+				<p>You are here!</p>
+			</agm-info-window>
+			<agm-info-window *ngIf="!authService.isLoggedIn()">
+				<h2>Hi, You are here!</h2>
+				<p>Sign in to subscribe a new point</p>
+			</agm-info-window>
+		</agm-marker>
+
+		<agm-marker
+			*ngFor="let point of points | async"
+			[latitude]="point.latitude"
+			[longitude]="point.longitude"
+			[iconUrl]="icon2">
+			<agm-info-window>
+				<h2>{{point.name}}</h2>
+				<p>{{point.description}}</p>
+				<!-- <br>
+				<small>Point added by Indiorlei de Oliveira</small> -->
+			</agm-info-window>
+		</agm-marker>
+
+	</agm-map>
+<div>
+
+<div *ngIf="authService.isLoggedIn()" class="modal" id="subscribe-new-point" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-header">
+			<a href="#" class="btn-close" aria-hidden="true" aria-label="Close">×</a>
+		</div>
+		<div class="modal-body">
+			<form (ngSubmit)="onSubmit()">
+				<div class="form-group">
+					<div class="content-input">
+						<input class="input" type="text" [(ngModel)]="name" name="name" placeholder="What's the name of this place?">
+					</div>
+					<div class="content-input">
+						<input class="input" type="number" [(ngModel)]="latitude" name="latitude" placeholder="latitude" id="latitude" readonly>
+					</div>
+					<div class="content-input">
+						<input class="input" type="number" [(ngModel)]="longitude" name="longitude" placeholder="longitude" id="longitude" readonly>
+					</div>
+					<div class="content-input">
+						<textarea class="input textarea" [(ngModel)]="description" name="description" placeholder="Talk about the place..."></textarea>
+					</div>
+				</div>
+				<div class="btn-group content-input">
+					<button type="submit" class="btn--subscribe">Subscribe</button>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer"></div>
+	</div>
+</div>
+
+<div *ngIf="authService.isLoggedIn()">
+	<a href="#subscribe-new-point" class="btn btn--new-point" (click)="getLocation()">
+		Subscribe new point
+	</a>
+</div>

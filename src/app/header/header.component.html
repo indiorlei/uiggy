@@ -1,0 +1,33 @@
+<header>
+	<div class="container" >
+		<div class="header-content">
+			<h1 class="logo">Uiggy</h1>
+			<div *ngIf="!authService.isLoggedIn()">
+				<div class="container-hover">
+					<h2 class="sign-in-text">Sign in</h2>
+					<div class="user-actions">
+						<div class="user-actions--arrow"></div>
+						<div class="content-name">
+							<h2 class="sign-in-title">Sign in to access</h2>
+						</div>
+						<app-login ></app-login>
+					</div>
+				</div>
+			</div>
+			<div *ngIf="authService.isLoggedIn()">
+				<div class="container-hover">
+					<figure class="figure-user">
+						<img src="{{authService.photoURL}}">
+					</figure>
+					<div class="user-actions">
+						<div class="user-actions--arrow"></div>
+						<div class="content-name">
+							<h2 class="name-user">{{authService.displayName}}</h2>
+						</div>
+						<app-login ></app-login>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

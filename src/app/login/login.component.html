@@ -1,0 +1,17 @@
+<div *ngIf="!authService.isLoggedIn()">
+	<button type="buton" class="btn btn--facebook" (click)="signInWithFacebook()">
+		Login with Facebook
+	</button>
+</div>
+
+<div *ngIf="!authService.isLoggedIn()">
+	<button type="buton" class="btn btn--google" (click)="signInWithGoogle()">
+		Login with Google
+	</button>
+</div>
+
+<div *ngIf="authService.isLoggedIn()">
+	<a href="" (click)="authService.logout()" class="btn--logout">
+		Logout
+	</a>
+</div>

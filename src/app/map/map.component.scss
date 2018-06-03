@@ -1,0 +1,155 @@
+agm-map {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.btn {
+	position: absolute;
+	bottom: 1.5rem;
+	left: 1rem;
+	padding: 20px 40px 20px 70px;
+	display: block;
+	text-align: left;
+	color: #fff;
+	letter-spacing: .5px;
+	border: none;
+	cursor: pointer;
+	border-radius: 2px;
+	text-decoration: none;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 25px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 23px;
+		height: 30px;
+		background-repeat: no-repeat;
+	}
+
+	&--new-point {
+		background-color: rgba(244, 96, 54, 1);
+		padding: 20px 34.7px 20px 64.8px;
+
+		&:before {
+			background-image: url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAeCAMAAAD5ENUgAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABQVBMVEX////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////95d77xrf95d35oorzTB3yQxHzSxz5oIf6tKHxMgDzVSj0YTjzVinwMQD5sZz2eFTyRhX0YDbyRxb1dVH2elbyQxL0YjjyRRT2d1P7v67xNQDzTyH0XzXzUCLxNAD6u6r5sZ3ySRn5r5r+7+v81cn+7+pLDLLEAAAARHRSTlMAKI/O7ffsy4smCKgJIuolEuboFKyvP0OWm8/S7/DW2KCkSUu8wDlHpQ3yGVBdnqsPXGvJPEiwRE/K1HWBMUAOoxsCNkLH718AAAABYktHRACIBR1IAAAAB3RJTUUH4gYCCSAnjU6HRAAAAP5JREFUKM9lkNdWAjEURY+CdEUREcUCgqDYexeVKMXCoFIUe9f//wBnbjKQyZyXu9deK8nNAYx0dTucPS63xwszPj8z4w9w1dvHOnEGDdU/wOSEBnUXZtYMARGBp2cFQcOIciiWyucXHEcwSvPyqqJVr2+IY3DRvK1pda3R5E9jjObdfaveengkHscEzafnl9e39w/iScT5xZ/Vr8o3xwSmxAY/v3+CkkBK2Xla/0dacRnjw1GLmqFeZuUSsnO8rHnJLZilLrbVUrvo5ZBy0siKcKuQwpdckxXWyW1YHDZ1lbIqbOluW3HYYbuqwh7bt7kDdmhzuaNjmzvJB0z8B4kOWm5u5e6gAAAAAElFTkSuQmCC);
+		}
+
+	}
+
+}
+
+
+.content-input {
+	width: 100%;
+	float: left;
+	display: block;
+	box-sizing: border-box;
+	padding: 5px;
+}
+
+.input {
+	width: 100%;
+	float: left;
+	display: block;
+	box-sizing: border-box;
+	font-size: 12px;
+	height: 35px;
+	padding: 10px;
+	background: white;
+	border: none;
+	color: #000;
+	appearance: none;
+	border-radius: 2px;
+
+	&.textarea {
+		resize: none;
+		height: 70px;
+	}
+
+}
+
+.btn-group {
+	padding-bottom: 1.5rem;
+}
+
+.btn--subscribe {
+	bottom: 1.5rem;
+	padding: 20px;
+	display: block;
+	text-align: left;
+	color: #fff;
+	letter-spacing: .5px;
+	border: none;
+	cursor: pointer;
+	border-radius: 2px;
+	text-decoration: none;
+	box-sizing: border-box;
+	width: 100%;
+	background-color: rgba(255, 191, 0, 1);
+	text-align: center;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+
+///////////////////////////////////////////////////////////////////////////
+// OPEN MODAL /////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+.btn-close {
+	color: #fff;
+	font-size: 2rem;
+	line-height: 0.5;
+	text-decoration: none;
+	position: absolute;
+	padding: 0.5rem;
+	right: 0;
+	top: 0;
+}
+
+.btn-close:hover {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.modal:before {
+	content: "";
+	display: none;
+	position: fixed;
+	z-index: 10;
+}
+
+.modal:target:before {
+	display: block;
+}
+
+.modal:target .modal-dialog {
+	bottom: 6rem;
+}
+
+.modal-dialog {
+	background-color: rgba(244, 96, 54, 1);
+	border-radius: 2px;
+	display: inline-block;
+	padding: 0;
+	position: fixed;
+	left: 1rem;
+	bottom: -30rem;
+	z-index: 11;
+	max-width: 250px;
+	transition: all 0.3s ease-out;
+}
+
+.modal-body {
+	padding: 2rem 1rem;
+}
+
+.modal-header {
+}
+
+///////////////////////////////////////////////////////////////////////////
+// END OPEN MODAL /////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
