@@ -3,12 +3,12 @@
 
 		<agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="icon">
 			<agm-info-window *ngIf="authService.isLoggedIn()">
-				<h2>Hi, {{authService.displayName}}</h2>
-				<p>You are here!</p>
+				<h2>Oi, {{authService.displayName}}</h2>
+				<p>Você está aqui!</p>
 			</agm-info-window>
 			<agm-info-window *ngIf="!authService.isLoggedIn()">
-				<h2>Hi, You are here!</h2>
-				<p>Sign in to subscribe a new point</p>
+				<h2>Oi, você está aqui!</h2>
+				<p>Faça login para adicionar um novo ponto</p>
 			</agm-info-window>
 		</agm-marker>
 
@@ -28,16 +28,16 @@
 	</agm-map>
 <div>
 
-<div *ngIf="authService.isLoggedIn()" class="modal" id="subscribe-new-point" aria-hidden="true">
+<div *ngIf="authService.isLoggedIn()" class="modal" id="add-new-point" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-header">
-			<a href="#" class="btn-close" aria-hidden="true" aria-label="Close">×</a>
+			<a href="#" class="btn-close" aria-hidden="true" aria-label="Fechar">×</a>
 		</div>
 		<div class="modal-body">
 			<form (ngSubmit)="onSubmit()">
 				<div class="form-group">
 					<div class="content-input">
-						<input class="input" type="text" [(ngModel)]="name" name="name" placeholder="What's the name of this place?">
+						<input class="input" type="text" [(ngModel)]="name" name="name" placeholder="Qual é o nome deste lugar?">
 					</div>
 					<div class="content-input">
 						<input class="input" type="number" [(ngModel)]="latitude" name="latitude" placeholder="latitude" id="latitude" readonly>
@@ -46,11 +46,11 @@
 						<input class="input" type="number" [(ngModel)]="longitude" name="longitude" placeholder="longitude" id="longitude" readonly>
 					</div>
 					<div class="content-input">
-						<textarea class="input textarea" [(ngModel)]="description" name="description" placeholder="Talk about the place..."></textarea>
+						<textarea class="input textarea" [(ngModel)]="description" name="description" placeholder="Fale sobre o lugar..."></textarea>
 					</div>
 				</div>
 				<div class="btn-group content-input">
-					<button type="submit" class="btn--subscribe">Subscribe</button>
+					<button type="submit" class="btn--subscribe">Adicionar</button>
 				</div>
 			</form>
 		</div>
@@ -59,7 +59,7 @@
 </div>
 
 <div *ngIf="authService.isLoggedIn()">
-	<a href="#subscribe-new-point" class="btn btn--new-point" (click)="getLocation()">
-		Subscribe new point
+	<a href="#add-new-point" class="btn btn--new-point" (click)="getLocation()">
+		Adicionar novo ponto
 	</a>
 </div>
