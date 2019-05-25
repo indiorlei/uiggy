@@ -1,5 +1,8 @@
 # Uiggy > This branch contains the source code for [uiggy.surge.sh](http://uiggy.surge.sh/).
 
+[2017.angularattack.com]{https://2017.angularattack.com/}
+[team!]{https://2017.angularattack.com/entries/206-eresoft}
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
 
 ## Development server
